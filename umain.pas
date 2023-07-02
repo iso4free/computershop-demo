@@ -8,7 +8,7 @@ uses
   System.ImageList, Vcl.ImgList, Vcl.Imaging.pngimage, Vcl.ExtCtrls;
 
 type
-  TForm1 = class(TForm)
+  TfrmMain = class(TForm)
     bbTovar: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
@@ -16,6 +16,7 @@ type
     BitBtn5: TBitBtn;
     Image1: TImage;
     procedure bbTovarClick(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,17 +24,22 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmMain: TfrmMain;
 
 implementation
 
 {$R *.dfm}
-uses udata, utovar;
+uses udata, utovar, uklient;
 
 
-procedure TForm1.bbTovarClick(Sender: TObject);
+procedure TfrmMain.bbTovarClick(Sender: TObject);
 begin
  frmTovar.ShowModal;
+end;
+
+procedure TfrmMain.BitBtn2Click(Sender: TObject);
+begin
+ frmKlient.ShowModal;
 end;
 
 end.

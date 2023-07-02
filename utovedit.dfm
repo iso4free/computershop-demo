@@ -92,8 +92,7 @@ object frmEditTovar: TfrmEditTovar
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    ExplicitLeft = -1
-    ExplicitTop = 6
+    ExplicitWidth = 204
   end
   object edKod: TEdit
     Left = 96
@@ -133,12 +132,12 @@ object frmEditTovar: TfrmEditTovar
   end
   object cbCountry: TComboBox
     Left = 111
-    Top = 269
-    Width = 228
+    Top = 270
+    Width = 188
     Height = 21
+    Style = csDropDownList
     Color = 9984967
     TabOrder = 4
-    Text = 'cbCountry'
   end
   object Panel1: TPanel
     Left = 0
@@ -148,8 +147,7 @@ object frmEditTovar: TfrmEditTovar
     Align = alBottom
     AutoSize = True
     TabOrder = 5
-    ExplicitTop = 297
-    object BitBtn1: TBitBtn
+    object bbOk: TBitBtn
       Left = 1
       Top = 1
       Width = 75
@@ -158,9 +156,10 @@ object frmEditTovar: TfrmEditTovar
       Kind = bkOK
       NumGlyphs = 2
       TabOrder = 0
-      ExplicitLeft = 2
+      OnClick = bbOkClick
+      ExplicitTop = -7
     end
-    object BitBtn2: TBitBtn
+    object bbCancel: TBitBtn
       Left = 264
       Top = 1
       Width = 82
@@ -202,8 +201,15 @@ object frmEditTovar: TfrmEditTovar
       ParentFont = False
       ScrollBars = ssVertical
       TabOrder = 0
-      ExplicitLeft = 3
-      ExplicitTop = 17
     end
+  end
+  object bbCountrys: TButton
+    Left = 305
+    Top = 270
+    Width = 34
+    Height = 25
+    Hint = #1042#1110#1076#1082#1088#1080#1090#1080' '#1076#1086#1074#1110#1076#1085#1080#1082' '#1079' '#1082#1088#1072#1111#1085#1072#1084#1080', '#1103#1082#1097#1086' '#1087#1086#1090#1088#1110#1073#1085#1072' '#1074#1110#1076#1089#1091#1090#1085#1103' '#1074' '#1087#1077#1088#1077#1083#1110#1082#1091
+    Caption = '...'
+    TabOrder = 7
   end
 end

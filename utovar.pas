@@ -12,13 +12,17 @@ type
     DBGrid1: TDBGrid;
     Panel1: TPanel;
     bbAdd: TBitBtn;
-    BitBtn2: TBitBtn;
-    BitBtn3: TBitBtn;
-    BitBtn4: TBitBtn;
-    BitBtn5: TBitBtn;
-    procedure BitBtn5Click(Sender: TObject);
+    bbEdit: TBitBtn;
+    bbDelete: TBitBtn;
+    bbSearch: TBitBtn;
+    bbClose: TBitBtn;
+    edSearch: TEdit;
+    procedure bbCloseClick(Sender: TObject);
     procedure bbAddClick(Sender: TObject);
-    procedure BitBtn2Click(Sender: TObject);
+    procedure bbEditClick(Sender: TObject);
+    procedure bbDeleteClick(Sender: TObject);
+    procedure edSearchChange(Sender: TObject);
+    procedure bbSearchClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,17 +40,41 @@ uses udata, umain, utovedit;
 
 procedure TfrmTovar.bbAddClick(Sender: TObject);
 begin
+ frmEditTovar.NewRecord:=True;
+ frmEditTovar.Clear;
  frmEditTovar.ShowModal;
 end;
 
-procedure TfrmTovar.BitBtn2Click(Sender: TObject);
+procedure TfrmTovar.bbEditClick(Sender: TObject);
 begin
-frmEditTovar.ShowModal;
+ frmEditTovar.NewRecord:=False;
+ frmEditTovar.LoadData;
+ frmEditTovar.ShowModal;
 end;
 
-procedure TfrmTovar.BitBtn5Click(Sender: TObject);
+procedure TfrmTovar.bbSearchClick(Sender: TObject);
+begin
+ edSearch.Clear;
+ edSearch.Visible:=not edSearch.Visible;
+ if edSearch.Visible then edSearch.SetFocus;
+end;
+
+procedure TfrmTovar.edSearchChange(Sender: TObject);
+begin
+//фільтрувати таблицю на основі даних для пошуку
+if edSearch.Text<>'' then
+   DataModule1.atProduct.Locate('product name',QuotedStr(edSearch.Text),[loCaseInsensitive, loPartialKey]);
+end;
+
+procedure TfrmTovar.bbCloseClick(Sender: TObject);
 begin
  Close;
+end;
+
+procedure TfrmTovar.bbDeleteClick(Sender: TObject);
+begin
+  if MessageDlg('Дійсно видалити цей запис з БД?',TMsgDlgType.mtConfirmation,mbYesNo,0)=mrYes then
+     DataModule1.atProduct.Delete;
 end;
 
 end.

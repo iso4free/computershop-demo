@@ -2,8 +2,8 @@ object frmTovar: TfrmTovar
   Left = 0
   Top = 0
   Caption = #1058#1086#1074#1072#1088#1080
-  ClientHeight = 504
-  ClientWidth = 833
+  ClientHeight = 447
+  ClientWidth = 831
   Color = 14003189
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,10 +17,11 @@ object frmTovar: TfrmTovar
   object DBGrid1: TDBGrid
     Left = 0
     Top = 0
-    Width = 833
-    Height = 463
+    Width = 831
+    Height = 406
     Align = alClient
     Color = 14003189
+    DataSource = DataModule1.dsProduct
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
@@ -28,6 +29,7 @@ object frmTovar: TfrmTovar
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnDblClick = bbEditClick
     Columns = <
       item
         Expanded = False
@@ -56,7 +58,7 @@ object frmTovar: TfrmTovar
         Expanded = False
         FieldName = 'price'
         Title.Caption = #1062#1110#1085#1072
-        Width = 124
+        Width = 67
         Visible = True
       end
       item
@@ -70,13 +72,13 @@ object frmTovar: TfrmTovar
   end
   object Panel1: TPanel
     Left = 0
-    Top = 463
-    Width = 833
+    Top = 406
+    Width = 831
     Height = 41
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 278
-    ExplicitWidth = 505
+    ExplicitTop = 463
+    ExplicitWidth = 833
     object bbAdd: TBitBtn
       Left = 1
       Top = 1
@@ -144,7 +146,7 @@ object frmTovar: TfrmTovar
       TabOrder = 0
       OnClick = bbAddClick
     end
-    object BitBtn2: TBitBtn
+    object bbEdit: TBitBtn
       Left = 97
       Top = 1
       Width = 104
@@ -209,11 +211,9 @@ object frmTovar: TfrmTovar
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0C0C0E0E0E0FFFFFF}
       TabOrder = 1
-      OnClick = BitBtn2Click
-      ExplicitLeft = 91
-      ExplicitTop = 6
+      OnClick = bbEditClick
     end
-    object BitBtn3: TBitBtn
+    object bbDelete: TBitBtn
       Left = 201
       Top = 1
       Width = 96
@@ -278,10 +278,13 @@ object frmTovar: TfrmTovar
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 2
+      OnClick = bbDeleteClick
+      ExplicitLeft = 207
+      ExplicitTop = 6
     end
-    object BitBtn4: TBitBtn
-      Left = 368
-      Top = 1
+    object bbSearch: TBitBtn
+      Left = 296
+      Top = 0
       Width = 177
       Height = 39
       Align = alCustom
@@ -386,9 +389,10 @@ object frmTovar: TfrmTovar
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 3
+      OnClick = bbSearchClick
     end
-    object BitBtn5: TBitBtn
-      Left = 600
+    object bbClose: TBitBtn
+      Left = 598
       Top = 1
       Width = 232
       Height = 39
@@ -494,9 +498,18 @@ object frmTovar: TfrmTovar
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 4
-      OnClick = BitBtn5Click
-      ExplicitLeft = 601
-      ExplicitTop = 6
+      OnClick = bbCloseClick
+      ExplicitLeft = 600
+    end
+    object edSearch: TEdit
+      Left = 479
+      Top = 14
+      Width = 113
+      Height = 21
+      TabOrder = 5
+      Text = 'edSearch'
+      Visible = False
+      OnChange = edSearchChange
     end
   end
 end
