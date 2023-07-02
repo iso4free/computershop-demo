@@ -10,13 +10,15 @@ uses
 type
   TfrmMain = class(TForm)
     bbTovar: TBitBtn;
-    BitBtn2: TBitBtn;
-    BitBtn3: TBitBtn;
-    BitBtn4: TBitBtn;
-    BitBtn5: TBitBtn;
-    Image1: TImage;
+    bbCustomers: TBitBtn;
+    bbHistory: TBitBtn;
+    bbProviders: TBitBtn;
+    bbPersonal: TBitBtn;
+    imLogo: TImage;
     procedure bbTovarClick(Sender: TObject);
-    procedure BitBtn2Click(Sender: TObject);
+    procedure bbCustomersClick(Sender: TObject);
+    procedure bbProvidersClick(Sender: TObject);
+    procedure bbPersonalClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,15 +31,25 @@ var
 implementation
 
 {$R *.dfm}
-uses udata, utovar, uklient;
+uses udata, utovar, uklient, uprovider, upersonal;
 
+
+procedure TfrmMain.bbPersonalClick(Sender: TObject);
+begin
+ frmWorkers.ShowModal;
+end;
+
+procedure TfrmMain.bbProvidersClick(Sender: TObject);
+begin
+ frmProvider.ShowModal;
+end;
 
 procedure TfrmMain.bbTovarClick(Sender: TObject);
 begin
  frmTovar.ShowModal;
 end;
 
-procedure TfrmMain.BitBtn2Click(Sender: TObject);
+procedure TfrmMain.bbCustomersClick(Sender: TObject);
 begin
  frmKlient.ShowModal;
 end;

@@ -1,18 +1,18 @@
-﻿[BitBtn4]
-Coordinates=10,10,56,58
-
-[BitBtn5]
-Coordinates=142,10,56,58
-
-[BitBtn3]
-Coordinates=76,10,56,58
-
-[DataModule1.FDQuery1]
+﻿[DataModule1.FDQuery1]
 Coordinates=274,10,153,58
-
-[BitBtn2]
-Coordinates=10,78,56,58
 
 [bbTovar]
 Coordinates=208,10,56,58
+
+[bbCustomers]
+Coordinates=10,78,56,58
+
+[bbHistory]
+Coordinates=76,10,56,58
+
+[bbProviders]
+Coordinates=10,10,56,58
+
+[bbPersonal]
+Coordinates=142,10,56,58
 

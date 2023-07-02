@@ -7,7 +7,7 @@ object DataModule1: TDataModule1
   object ADOConnection1: TADOConnection
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Us' +
-      'ers\iso4f\OneDrive\Documents\GitHub\birykov\Win64\Debug\'#1041#1110#1088#1102#1082#1086#1074#1072 +
+      'ers\iso4f\OneDrive\Documents\GitHub\birykov\Win32\Debug\'#1041#1110#1088#1102#1082#1086#1074#1072 +
       '_'#1052#1072#1075#1072#1079#1080#1085'_'#1082#1086#1084#1087#8217#1102#1090#1077#1088#1085#1086#1111'_'#1090#1077#1093#1085#1110#1082#1080'.MDB;Mode=Share Deny None;Persist S' +
       'ecurity Info=False;Jet OLEDB:System database="";Jet OLEDB:Regist' +
       'ry Path="";Jet OLEDB:Database Password="";Jet OLEDB:Engine Type=' +
@@ -38,6 +38,7 @@ object DataModule1: TDataModule1
   end
   object atProvider: TADOTable
     Connection = ADOConnection1
+    CursorType = ctStatic
     TableName = 'Provider'
     Left = 40
     Top = 152
@@ -49,6 +50,7 @@ object DataModule1: TDataModule1
   end
   object atCompanyDetails: TADOTable
     Connection = ADOConnection1
+    CursorType = ctStatic
     TableName = 'Company details'
     Left = 40
     Top = 216
@@ -69,5 +71,17 @@ object DataModule1: TDataModule1
     DataSet = atClients
     Left = 120
     Top = 272
+  end
+  object atWorkers: TADOTable
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'Workers'
+    Left = 248
+    Top = 96
+  end
+  object dsWorkers: TDataSource
+    DataSet = atWorkers
+    Left = 312
+    Top = 96
   end
 end

@@ -16,6 +16,9 @@ type
     bbClose: TBitBtn;
     dgClients: TDBGrid;
     procedure bbCloseClick(Sender: TObject);
+    procedure bbAddClick(Sender: TObject);
+    procedure bbEditClick(Sender: TObject);
+    procedure bbDeleteClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,11 +32,32 @@ implementation
 
 {$R *.dfm}
 
-uses udata;
+uses udata, uclied;
+
+procedure TfrmKlient.bbAddClick(Sender: TObject);
+begin
+ frmClientEdit.NewRecord:=True;
+ frmClientEdit.Clear;
+ frmClientEdit.ShowModal;
+end;
 
 procedure TfrmKlient.bbCloseClick(Sender: TObject);
 begin
  Close;
 end;
+
+procedure TfrmKlient.bbDeleteClick(Sender: TObject);
+begin
+  if MessageDlg('Дійсно видалити цей запис з БД?',TMsgDlgType.mtConfirmation,mbYesNo,0)=mrYes then
+     DataModule1.atClients.Delete;
+end;
+
+procedure TfrmKlient.bbEditClick(Sender: TObject);
+begin
+ frmClientEdit.NewRecord:=False;
+ frmClientEdit.LoadData;
+ frmClientEdit.ShowModal;
+end;
+
 
 end.

@@ -10,7 +10,7 @@ uses
 type
   TfrmEditTovar = class(TForm)
     lbKod: TLabel;
-    edKod: TEdit;
+    edCode: TEdit;
     lbNazva: TLabel;
     edNazva: TEdit;
     mCharacter: TMemo;
@@ -27,6 +27,7 @@ type
     gbCharacter: TGroupBox;
     bbCountrys: TButton;
     procedure bbOkClick(Sender: TObject);
+    procedure bbCountrysClick(Sender: TObject);
   private
     fNewRecord: Boolean;
     { Private declarations }
@@ -47,8 +48,14 @@ implementation
 
 {$R *.dfm}
 
-uses umain, udata;
+uses umain, udata, ucountries;
 { TfrmEditTovar }
+
+procedure TfrmEditTovar.bbCountrysClick(Sender: TObject);
+begin
+  frmCountries.ShowModal;
+  GetCountrys;
+end;
 
 procedure TfrmEditTovar.bbOkClick(Sender: TObject);
 begin
@@ -58,7 +65,7 @@ end;
 procedure TfrmEditTovar.Clear;
 begin
  lbNewTovar.Caption:='Новий товар';
- edKod.Clear;
+ edCode.Clear;
  edNazva.Clear;
  mCharacter.Clear;
  edPrice.Clear;
@@ -75,7 +82,6 @@ begin
     cbCountry.Items.Add(atCompanyDetails.FieldByName('producing country').AsString);
     atCompanyDetails.Next;
    end;
-
  end;
 end;
 
@@ -85,7 +91,7 @@ begin
  lbNewTovar.Caption:='Редагування товару';
  GetCountrys;
  with DataModule1 do begin
-   edKod.Text:=atProduct.FieldByName('product code').AsString;
+   edCode.Text:=atProduct.FieldByName('product code').AsString;
    edNazva.Text:=atProduct.FieldByName('product name').AsString;
    mCharacter.Text:=atProduct.FieldByName('characteristic').AsString;
    edPrice.Text:=atProduct.FieldByName('price').AsString;
@@ -99,11 +105,10 @@ begin
   with DataModule1 do begin
    if NewRecord then begin
       atProduct.Append;
-
    end else begin
       atProduct.Edit;
    end;
-   atProduct.FieldByName('product code').AsString:=edKod.Text;
+   atProduct.FieldByName('product code').AsString:=edCode.Text;
    atProduct.FieldByName('product name').AsString:=edNazva.Text;
    atProduct.FieldByName('characteristic').AsString:=mCharacter.Text;
    atProduct.FieldByName('price').AsString:=edPrice.Text;

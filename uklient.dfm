@@ -21,9 +21,6 @@ object frmKlient: TfrmKlient
     Height = 41
     Align = alBottom
     TabOrder = 0
-    ExplicitLeft = -326
-    ExplicitTop = 190
-    ExplicitWidth = 831
     object bbAdd: TBitBtn
       Left = 1
       Top = 1
@@ -89,8 +86,7 @@ object frmKlient: TfrmKlient
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 0
-      ExplicitLeft = -5
-      ExplicitTop = 6
+      OnClick = bbAddClick
     end
     object bbEdit: TBitBtn
       Left = 97
@@ -157,6 +153,7 @@ object frmKlient: TfrmKlient
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0C0C0E0E0E0FFFFFF}
       TabOrder = 1
+      OnClick = bbEditClick
     end
     object bbDelete: TBitBtn
       Left = 201
@@ -223,6 +220,9 @@ object frmKlient: TfrmKlient
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 2
+      OnClick = bbDeleteClick
+      ExplicitLeft = 207
+      ExplicitTop = 6
     end
     object bbClose: TBitBtn
       Left = 395
@@ -332,7 +332,6 @@ object frmKlient: TfrmKlient
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 3
       OnClick = bbCloseClick
-      ExplicitLeft = 598
     end
   end
   object dgClients: TDBGrid
@@ -350,6 +349,7 @@ object frmKlient: TfrmKlient
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnDblClick = bbEditClick
     Columns = <
       item
         Expanded = False

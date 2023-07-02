@@ -6,7 +6,7 @@
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <TargetedPlatforms>3</TargetedPlatforms>
+        <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>shop.dpr</MainSource>
     </PropertyGroup>
@@ -146,6 +146,34 @@
         </DCCReference>
         <DCCReference Include="uklient.pas">
             <Form>frmKlient</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="uclied.pas">
+            <Form>frmClientEdit</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="ucountries.pas">
+            <Form>frmCountries</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="ucoed.pas">
+            <Form>frmCountryEdit</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="uprovider.pas">
+            <Form>frmProvider</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="uproved.pas">
+            <Form>frmProviderEdit</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="upersonal.pas">
+            <Form>frmWorkers</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="uworker.pas">
+            <Form>frmWorker</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
@@ -966,7 +994,7 @@
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>
-                <Platform value="Win64">True</Platform>
+                <Platform value="Win64">False</Platform>
             </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>

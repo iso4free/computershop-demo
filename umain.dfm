@@ -1,9 +1,11 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Computer Shop'
-  ClientHeight = 463
-  ClientWidth = 443
+  ClientHeight = 473
+  ClientWidth = 453
   Color = 14003189
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,7 +16,7 @@ object frmMain: TfrmMain
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object Image1: TImage
+  object imLogo: TImage
     Left = 75
     Top = 0
     Width = 300
@@ -290,7 +292,7 @@ object frmMain: TfrmMain
     Left = 75
     Top = 168
     Width = 300
-    Height = 50
+    Height = 58
     Caption = #1058#1086#1074#1072#1088
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -522,11 +524,11 @@ object frmMain: TfrmMain
     TabOrder = 0
     OnClick = bbTovarClick
   end
-  object BitBtn2: TBitBtn
+  object bbCustomers: TBitBtn
     Left = 75
     Top = 224
     Width = 300
-    Height = 50
+    Height = 58
     Caption = #1050#1083#1110#1108#1085#1090
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -829,13 +831,13 @@ object frmMain: TfrmMain
       9800C75B9800}
     ParentFont = False
     TabOrder = 1
-    OnClick = BitBtn2Click
+    OnClick = bbCustomersClick
   end
-  object BitBtn3: TBitBtn
+  object bbHistory: TBitBtn
     Left = 75
     Top = 280
     Width = 300
-    Height = 50
+    Height = 58
     Caption = #1030#1089#1090#1086#1088#1110#1103' '#1079#1072#1084#1086#1074#1083#1077#1085#1100
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -1066,11 +1068,11 @@ object frmMain: TfrmMain
     ParentFont = False
     TabOrder = 2
   end
-  object BitBtn4: TBitBtn
+  object bbProviders: TBitBtn
     Left = 75
     Top = 336
     Width = 300
-    Height = 50
+    Height = 58
     Caption = #1055#1086#1089#1090#1072#1095#1072#1083#1100#1085#1080#1082#1080
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -1300,12 +1302,13 @@ object frmMain: TfrmMain
       0000000000000000000000000000000000000000000000000000}
     ParentFont = False
     TabOrder = 3
+    OnClick = bbProvidersClick
   end
-  object BitBtn5: TBitBtn
+  object bbPersonal: TBitBtn
     Left = 75
     Top = 392
     Width = 300
-    Height = 50
+    Height = 58
     Caption = #1055#1077#1088#1089#1086#1085#1072#1083
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -1535,5 +1538,6 @@ object frmMain: TfrmMain
       0000000000000000000000000000000000000000000000000000}
     ParentFont = False
     TabOrder = 4
+    OnClick = bbPersonalClick
   end
 end

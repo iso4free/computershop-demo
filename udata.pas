@@ -16,6 +16,8 @@ type
     dsCompanyDetails: TDataSource;
     atClients: TADOTable;
     dsClients: TDataSource;
+    atWorkers: TADOTable;
+    dsWorkers: TDataSource;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private
@@ -46,6 +48,7 @@ begin
  atProvider.Open; //постачальника
  atCompanyDetails.Open; //країни-виробники
  atClients.Open;  //клієнти
+ atWorkers.Open; //персонал
 end;
 
 procedure TDataModule1.DataModuleDestroy(Sender: TObject);
@@ -55,6 +58,7 @@ begin
  atProvider.Close; //постачальника
  atCompanyDetails.Close; //країни-виробники
  atClients.Close; //клієнти
+ atWorkers.Close; //персонал
 end;
 
 
