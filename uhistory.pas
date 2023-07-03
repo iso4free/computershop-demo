@@ -20,6 +20,8 @@ type
     dgHistory: TDBGrid;
     dgDetails: TDBGrid;
     procedure bbCloseClick(Sender: TObject);
+    procedure bbAddClick(Sender: TObject);
+    procedure bbEditClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,9 +37,23 @@ implementation
 
 uses udata, uorder;
 
+procedure TfrmHistory.bbAddClick(Sender: TObject);
+begin
+ frmOrder.NewRecord:=True;
+ frmOrder.Clear;
+ frmOrder.ShowModal;
+end;
+
 procedure TfrmHistory.bbCloseClick(Sender: TObject);
 begin
  Close;
+end;
+
+procedure TfrmHistory.bbEditClick(Sender: TObject);
+begin
+ frmOrder.NewRecord:=False;
+ frmOrder.LoadData;
+ frmOrder.ShowModal;
 end;
 
 end.

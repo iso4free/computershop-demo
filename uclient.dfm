@@ -3,7 +3,7 @@ object frmKlient: TfrmKlient
   Top = 0
   Caption = #1050#1083#1110#1108#1085#1090#1080
   ClientHeight = 312
-  ClientWidth = 690
+  ClientWidth = 600
   Color = 14003189
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,13 +17,13 @@ object frmKlient: TfrmKlient
   object Panel1: TPanel
     Left = 0
     Top = 271
-    Width = 690
+    Width = 600
     Height = 41
     Align = alBottom
     Color = 14003189
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 628
+    ExplicitWidth = 690
     object bbAdd: TBitBtn
       Left = 1
       Top = 1
@@ -226,12 +226,12 @@ object frmKlient: TfrmKlient
       OnClick = bbDeleteClick
     end
     object bbClose: TBitBtn
-      Left = 457
+      Left = 438
       Top = 1
-      Width = 232
+      Width = 161
       Height = 39
       Align = alRight
-      Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1100' '#1076#1086' '#1075#1086#1083#1086#1074#1085#1086#1075#1086' '#1084#1077#1085#1102
+      Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1100
       Glyph.Data = {
         360C0000424D360C000000000000360000002800000020000000200000000100
         180000000000000C000000000000000000000000000000000000000000000000
@@ -333,13 +333,13 @@ object frmKlient: TfrmKlient
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 3
       OnClick = bbCloseClick
-      ExplicitLeft = 395
+      ExplicitLeft = 528
     end
   end
   object dgClients: TDBGrid
     Left = 0
     Top = 0
-    Width = 690
+    Width = 600
     Height = 137
     Align = alTop
     Color = 14003189
@@ -388,19 +388,16 @@ object frmKlient: TfrmKlient
   object gbHistory: TGroupBox
     Left = 0
     Top = 137
-    Width = 690
+    Width = 600
     Height = 134
     Align = alClient
     Caption = #1030#1089#1090#1086#1088#1110#1103' '#1079#1072#1084#1086#1074#1083#1077#1085#1100' '#1082#1083#1110#1108#1085#1090#1072
     TabOrder = 2
-    ExplicitLeft = 112
-    ExplicitTop = 192
-    ExplicitWidth = 185
-    ExplicitHeight = 105
+    ExplicitWidth = 690
     object dgHistory: TDBGrid
       Left = 2
       Top = 15
-      Width = 686
+      Width = 596
       Height = 117
       Align = alClient
       DataSource = DataModule1.dsPayment

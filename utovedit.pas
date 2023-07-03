@@ -55,9 +55,13 @@ uses umain, udata, ucountries;
 { TfrmEditTovar }
 
 procedure TfrmEditTovar.bbCountrysClick(Sender: TObject);
+var
+   country : String;
 begin
     frmCountries.ShowModal;
+    country:=DataModule1.atCompanyDetails.FieldByName('producingcountry').AsString;
     GetCountrys;
+    cbCountry.ItemIndex:=cbCountry.Items.IndexOf(country);
 end;
 
 procedure TfrmEditTovar.bbOkClick(Sender: TObject);

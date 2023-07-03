@@ -23,8 +23,6 @@ object frmHistory: TfrmHistory
     Color = 14003189
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 391
-    ExplicitWidth = 540
     object bbAdd: TBitBtn
       Left = 1
       Top = 1
@@ -90,6 +88,7 @@ object frmHistory: TfrmHistory
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 0
+      OnClick = bbAddClick
     end
     object bbEdit: TBitBtn
       Left = 97
@@ -156,6 +155,7 @@ object frmHistory: TfrmHistory
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0C0C0E0E0E0FFFFFF}
       TabOrder = 1
+      OnClick = bbEditClick
     end
     object bbDelete: TBitBtn
       Left = 201
@@ -331,7 +331,6 @@ object frmHistory: TfrmHistory
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 3
       OnClick = bbCloseClick
-      ExplicitLeft = 307
     end
   end
   object gbCheck: TGroupBox
@@ -342,7 +341,6 @@ object frmHistory: TfrmHistory
     Align = alTop
     Caption = #1030#1089#1090#1086#1088#1110#1103' '#1079#1072#1084#1086#1074#1083#1077#1085#1100
     TabOrder = 1
-    ExplicitWidth = 540
     object dgHistory: TDBGrid
       Left = 2
       Top = 15
@@ -395,12 +393,10 @@ object frmHistory: TfrmHistory
     Align = alClient
     Caption = #1044#1077#1090#1072#1083#1110#1079#1072#1094#1110#1103' '#1086#1073#1088#1072#1085#1086#1075#1086' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
     TabOrder = 2
-    ExplicitWidth = 540
-    ExplicitHeight = 198
     object dgDetails: TDBGrid
       Left = 2
       Top = 15
-      Width = 351
+      Width = 343
       Height = 206
       Align = alLeft
       DataSource = DataModule1.dsOrderProduct
@@ -433,7 +429,6 @@ object frmHistory: TfrmHistory
           Expanded = False
           FieldName = 'color'
           Title.Caption = #1050#1086#1083#1110#1088
-          Width = -1
           Visible = False
         end
         item
