@@ -3,7 +3,8 @@ unit uproved;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
   Vcl.Mask;
 
@@ -26,13 +27,14 @@ type
   private
     fNewRecord: Boolean;
     { Private declarations }
-    procedure GetCountrys; //отримати список крањн-виробник≥в
+    procedure GetCountrys; // отримати список крањн-виробник≥в
   public
     { Public declarations }
-    property NewRecord : Boolean read fNewRecord write fNewRecord; //ознака додаванн€ нового постачальника
-    procedure Clear; //очистити пол€ форми дл€ вводу нового постачальника
-    procedure LoadData; //завантажити поточний запис дл€ редагуванн€
-    procedure SaveData; //зберегти новий або в≥дредагований запис
+    property NewRecord: Boolean read fNewRecord write fNewRecord;
+    // ознака додаванн€ нового постачальника
+    procedure Clear; // очистити пол€ форми дл€ вводу нового постачальника
+    procedure LoadData; // завантажити поточний запис дл€ редагуванн€
+    procedure SaveData; // зберегти новий або в≥дредагований запис
   end;
 
 var
@@ -53,7 +55,7 @@ end;
 
 procedure TfrmProviderEdit.bbOkClick(Sender: TObject);
 begin
- SaveData;
+  SaveData;
 end;
 
 procedure TfrmProviderEdit.Clear;
@@ -66,43 +68,51 @@ end;
 
 procedure TfrmProviderEdit.GetCountrys;
 begin
- with DataModule1 do begin
-   cbCountry.Clear;
-   atCompanyDetails.First;
-   while not atCompanyDetails.EOF do begin
-    cbCountry.Items.Add(atCompanyDetails.FieldByName('producing country').AsString);
-    atCompanyDetails.Next;
-   end;
- end;
+  with DataModule1 do
+  begin
+    cbCountry.Clear;
+    atCompanyDetails.First;
+    while not atCompanyDetails.EOF do
+    begin
+      cbCountry.Items.Add(atCompanyDetails.FieldByName('producing country')
+        .AsString);
+      atCompanyDetails.Next;
+    end;
+  end;
 end;
 
 procedure TfrmProviderEdit.LoadData;
 begin
-  with DataModule1 do begin
-      GetCountrys;
-      cbCountry.ItemIndex:=cbCountry.Items.IndexOf(atProvider.FieldByName('producing country').AsString);
-      edAddress.Text:=atProvider.FieldByName('address').AsString;
-      edName.Text:=atProvider.FieldByName('name provider').AsString;
-      mePhone.Text:=atProvider.FieldByName('contacts').AsString;
+  with DataModule1 do
+  begin
+    GetCountrys;
+    cbCountry.ItemIndex := cbCountry.Items.IndexOf
+      (atProvider.FieldByName('producingcountry').AsString);
+    edAddress.Text := atProvider.FieldByName('address').AsString;
+    edName.Text := atProvider.FieldByName('nameprovider').AsString;
+    mePhone.Text := atProvider.FieldByName('contacts').AsString;
   end;
 end;
 
 procedure TfrmProviderEdit.SaveData;
 begin
-  with DataModule1 do begin
-    if NewRecord then begin
-       atProvider.Append;
-      end else begin
-        atProvider.Edit;
-      end;
+  with DataModule1 do
+  begin
+    if NewRecord then
+    begin
+      atProvider.Append;
+    end
+    else
+    begin
+      atProvider.Edit;
+    end;
 
+    atProvider.FieldByName('producing country').AsString := cbCountry.Text;
+    atProvider.FieldByName('address').AsString := edAddress.Text;
+    atProvider.FieldByName('name provider').AsString := edName.Text;
+    atProvider.FieldByName('contacts').AsString := mePhone.Text;
 
-      atProvider.FieldByName('producing country').AsString:=cbCountry.Text;
-      atProvider.FieldByName('address').AsString:=edAddress.Text;
-      atProvider.FieldByName('name provider').AsString:=edName.Text;
-      atProvider.FieldByName('contacts').AsString:=mePhone.Text;
-
-      atProvider.Post;
+    atProvider.Post;
   end;
 end;
 

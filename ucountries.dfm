@@ -87,8 +87,6 @@ object frmCountries: TfrmCountries
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 0
       OnClick = bbAddClick
-      ExplicitLeft = -5
-      ExplicitTop = 6
     end
     object bbEdit: TBitBtn
       Left = 97
@@ -156,7 +154,6 @@ object frmCountries: TfrmCountries
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0C0C0E0E0E0FFFFFF}
       TabOrder = 1
       OnClick = bbEditClick
-      ExplicitHeight = 39
     end
     object bbDelete: TBitBtn
       Left = 201
@@ -224,7 +221,6 @@ object frmCountries: TfrmCountries
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 2
       OnClick = bbDeleteClick
-      ExplicitHeight = 39
     end
     object bbClose: TBitBtn
       Left = 400
@@ -334,7 +330,6 @@ object frmCountries: TfrmCountries
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 3
       OnClick = bbCloseClick
-      ExplicitHeight = 39
     end
   end
   object dgClients: TDBGrid
@@ -356,7 +351,7 @@ object frmCountries: TfrmCountries
     Columns = <
       item
         Expanded = False
-        FieldName = 'producing country'
+        FieldName = 'producingcountry'
         Title.Alignment = taCenter
         Title.Caption = #1050#1088#1072#1111#1085#1072'-'#1074#1080#1088#1086#1073#1085#1080#1082
         Width = 116
@@ -380,7 +375,7 @@ object frmCountries: TfrmCountries
       end
       item
         Expanded = False
-        FieldName = 'postal index'
+        FieldName = 'postalindex'
         Title.Alignment = taCenter
         Title.Caption = #1055#1086#1096#1090#1086#1074#1080#1081' '#1110#1085#1076#1077#1082#1089
         Width = 100

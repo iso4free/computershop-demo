@@ -3,7 +3,8 @@ unit ucoed;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
   Vcl.Mask;
 
@@ -26,10 +27,11 @@ type
     { Private declarations }
   public
     { Public declarations }
-    property NewRecord : Boolean read fNewRecord write fNewRecord; //ознака додавання нової країни
-    procedure Clear; //очистити поля форми для вводу нової країни
-    procedure LoadData; //завантажити поточний запис для редагування
-    procedure SaveData; //зберегти новий або відредагований запис
+    property NewRecord: Boolean read fNewRecord write fNewRecord;
+    // ознака додавання нової країни
+    procedure Clear; // очистити поля форми для вводу нової країни
+    procedure LoadData; // завантажити поточний запис для редагування
+    procedure SaveData; // зберегти новий або відредагований запис
   end;
 
 var
@@ -45,7 +47,7 @@ uses udata;
 
 procedure TfrmCountryEdit.bbOkClick(Sender: TObject);
 begin
- SaveData;
+  SaveData;
 end;
 
 procedure TfrmCountryEdit.Clear;
@@ -58,27 +60,34 @@ end;
 
 procedure TfrmCountryEdit.LoadData;
 begin
-  with DataModule1 do begin
-      edCountry.Text:=atCompanyDetails.FieldByName('producing country').AsString;
-      edAddress.Text:=atCompanyDetails.FieldByName('address').AsString;
-      meContacts.Text:=atCompanyDetails.FieldByName('contacts').AsString;
-      meIndex.Text:=atCompanyDetails.FieldByName('postal index').AsString;
+  with DataModule1 do
+  begin
+    edCountry.Text := atCompanyDetails.FieldByName('producingcountry')
+      .AsString;
+    edAddress.Text := atCompanyDetails.FieldByName('address').AsString;
+    meContacts.Text := atCompanyDetails.FieldByName('contacts').AsString;
+    meIndex.Text := atCompanyDetails.FieldByName('postalindex').AsString;
   end;
 end;
 
 procedure TfrmCountryEdit.SaveData;
 begin
-with DataModule1 do begin
-   if NewRecord then begin
+  with DataModule1 do
+  begin
+    if NewRecord then
+    begin
       atCompanyDetails.Append;
-   end else begin
+    end
+    else
+    begin
       atCompanyDetails.Edit;
-   end;
-   atCompanyDetails.FieldByName('producing country').AsString:=edCountry.Text;
-   atCompanyDetails.FieldByName('address').AsString:=edAddress.Text;
-   atCompanyDetails.FieldByName('contacts').AsString:=meContacts.Text;
-   atCompanyDetails.FieldByName('postal index').AsString:=meIndex.Text;
-   atCompanyDetails.Post;
+    end;
+    atCompanyDetails.FieldByName('producingcountry').AsString :=
+      edCountry.Text;
+    atCompanyDetails.FieldByName('address').AsString := edAddress.Text;
+    atCompanyDetails.FieldByName('contacts').AsString := meContacts.Text;
+    atCompanyDetails.FieldByName('postalindex').AsString := meIndex.Text;
+    atCompanyDetails.Post;
   end;
 end;
 

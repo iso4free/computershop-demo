@@ -47,8 +47,9 @@ object frmClientEdit: TfrmClientEdit
     Height = 34
     Align = alBottom
     AutoSize = True
+    Color = 14003189
+    ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 135
     object bbOk: TBitBtn
       Left = 1
       Top = 1

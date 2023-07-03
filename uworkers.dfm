@@ -20,10 +20,9 @@ object frmWorkers: TfrmWorkers
     Width = 820
     Height = 41
     Align = alBottom
+    Color = 14003189
+    ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = -123
-    ExplicitTop = 271
-    ExplicitWidth = 628
     object bbAdd: TBitBtn
       Left = 1
       Top = 1
@@ -157,8 +156,6 @@ object frmWorkers: TfrmWorkers
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0C0C0E0E0E0FFFFFF}
       TabOrder = 1
       OnClick = bbEditClick
-      ExplicitLeft = 91
-      ExplicitTop = 6
     end
     object bbDelete: TBitBtn
       Left = 201
@@ -226,8 +223,6 @@ object frmWorkers: TfrmWorkers
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 2
       OnClick = bbDeleteClick
-      ExplicitLeft = 207
-      ExplicitTop = 6
     end
     object bbClose: TBitBtn
       Left = 587
@@ -337,8 +332,6 @@ object frmWorkers: TfrmWorkers
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 3
       OnClick = bbCloseClick
-      ExplicitLeft = 588
-      ExplicitTop = 6
     end
   end
   object dgWorkers: TDBGrid
@@ -347,6 +340,7 @@ object frmWorkers: TfrmWorkers
     Width = 820
     Height = 276
     Align = alClient
+    Color = 14003189
     DataSource = DataModule1.dsWorkers
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 1
@@ -367,7 +361,7 @@ object frmWorkers: TfrmWorkers
       end
       item
         Expanded = False
-        FieldName = 'name'
+        FieldName = 'workername'
         Title.Alignment = taCenter
         Title.Caption = #1030#1084#39#1103
         Width = 200
@@ -378,21 +372,23 @@ object frmWorkers: TfrmWorkers
         FieldName = 'address'
         Title.Alignment = taCenter
         Title.Caption = #1040#1076#1088#1077#1089#1072
-        Width = 200
+        Width = 201
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'phone number'
+        FieldName = 'phonenumber'
         Title.Alignment = taCenter
         Title.Caption = #8470' '#1090#1077#1083#1077#1092#1086#1085#1091
+        Width = 72
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'date birth'
+        FieldName = 'datebirth'
         Title.Alignment = taCenter
         Title.Caption = #1044#1072#1090#1072' '#1085#1072#1088#1086#1076#1078#1077#1085#1085#1103
+        Width = 95
         Visible = True
       end
       item

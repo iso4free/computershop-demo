@@ -77,9 +77,9 @@ object frmWorker: TfrmWorker
     Height = 34
     Align = alBottom
     AutoSize = True
+    Color = 14003189
+    ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 135
-    ExplicitWidth = 329
     object bbOk: TBitBtn
       Left = 1
       Top = 1
@@ -90,7 +90,6 @@ object frmWorker: TfrmWorker
       NumGlyphs = 2
       TabOrder = 0
       OnClick = bbOkClick
-      ExplicitLeft = 0
     end
     object bbCancel: TBitBtn
       Left = 230
@@ -102,7 +101,6 @@ object frmWorker: TfrmWorker
       Kind = bkCancel
       NumGlyphs = 2
       TabOrder = 1
-      ExplicitLeft = 246
     end
   end
   object edName: TEdit

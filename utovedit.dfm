@@ -146,6 +146,8 @@ object frmEditTovar: TfrmEditTovar
     Height = 34
     Align = alBottom
     AutoSize = True
+    Color = 14003189
+    ParentBackground = False
     TabOrder = 5
     object bbOk: TBitBtn
       Left = 1
@@ -200,8 +202,6 @@ object frmEditTovar: TfrmEditTovar
       ParentFont = False
       ScrollBars = ssVertical
       TabOrder = 0
-      ExplicitLeft = 3
-      ExplicitTop = 17
     end
   end
   object bbCountrys: TButton

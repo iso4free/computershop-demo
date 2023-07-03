@@ -49,8 +49,6 @@ object frmCountryEdit: TfrmCountryEdit
     Align = alBottom
     AutoSize = True
     TabOrder = 0
-    ExplicitTop = 142
-    ExplicitWidth = 329
     object bbOk: TBitBtn
       Left = 1
       Top = 1
@@ -61,7 +59,6 @@ object frmCountryEdit: TfrmCountryEdit
       NumGlyphs = 2
       TabOrder = 0
       OnClick = bbOkClick
-      ExplicitLeft = 0
     end
     object bbCancel: TBitBtn
       Left = 236
@@ -73,7 +70,6 @@ object frmCountryEdit: TfrmCountryEdit
       Kind = bkCancel
       NumGlyphs = 2
       TabOrder = 1
-      ExplicitLeft = 246
     end
   end
   object edCountry: TEdit

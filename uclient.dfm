@@ -3,7 +3,7 @@ object frmKlient: TfrmKlient
   Top = 0
   Caption = #1050#1083#1110#1108#1085#1090#1080
   ClientHeight = 312
-  ClientWidth = 628
+  ClientWidth = 690
   Color = 14003189
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,10 +17,13 @@ object frmKlient: TfrmKlient
   object Panel1: TPanel
     Left = 0
     Top = 271
-    Width = 628
+    Width = 690
     Height = 41
     Align = alBottom
+    Color = 14003189
+    ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 628
     object bbAdd: TBitBtn
       Left = 1
       Top = 1
@@ -221,11 +224,9 @@ object frmKlient: TfrmKlient
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 2
       OnClick = bbDeleteClick
-      ExplicitLeft = 207
-      ExplicitTop = 6
     end
     object bbClose: TBitBtn
-      Left = 395
+      Left = 457
       Top = 1
       Width = 232
       Height = 39
@@ -332,14 +333,15 @@ object frmKlient: TfrmKlient
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 3
       OnClick = bbCloseClick
+      ExplicitLeft = 395
     end
   end
   object dgClients: TDBGrid
     Left = 0
     Top = 0
-    Width = 628
-    Height = 271
-    Align = alClient
+    Width = 690
+    Height = 137
+    Align = alTop
     Color = 14003189
     DataSource = DataModule1.dsClients
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -353,14 +355,14 @@ object frmKlient: TfrmKlient
     Columns = <
       item
         Expanded = False
-        FieldName = 'code client'
+        FieldName = 'codeclient'
         Title.Alignment = taCenter
         Title.Caption = #1050#1086#1076' '#1082#1083#1110#1108#1085#1090#1072
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'name'
+        FieldName = 'nameclient'
         Title.Alignment = taCenter
         Title.Caption = #1055'.'#1110'.'#1087'-'#1073'.'
         Width = 150
@@ -376,11 +378,59 @@ object frmKlient: TfrmKlient
       end
       item
         Expanded = False
-        FieldName = 'phone number'
+        FieldName = 'phonenumber'
         Title.Alignment = taCenter
         Title.Caption = #1058#1077#1083'.'
         Width = 100
         Visible = True
       end>
+  end
+  object gbHistory: TGroupBox
+    Left = 0
+    Top = 137
+    Width = 690
+    Height = 134
+    Align = alClient
+    Caption = #1030#1089#1090#1086#1088#1110#1103' '#1079#1072#1084#1086#1074#1083#1077#1085#1100' '#1082#1083#1110#1108#1085#1090#1072
+    TabOrder = 2
+    ExplicitLeft = 112
+    ExplicitTop = 192
+    ExplicitWidth = 185
+    ExplicitHeight = 105
+    object dgHistory: TDBGrid
+      Left = 2
+      Top = 15
+      Width = 686
+      Height = 117
+      Align = alClient
+      DataSource = DataModule1.dsPayment
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'codeorder'
+          Title.Caption = #8470' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'codeclient'
+          Title.Caption = #1050#1086#1076' '#1082#1083#1110#1108#1085#1090#1072
+          Width = 69
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'payment'
+          Title.Caption = #1054#1087#1083#1072#1090#1072
+          Width = 74
+          Visible = True
+        end>
+    end
   end
 end

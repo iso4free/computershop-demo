@@ -2,7 +2,7 @@ object DataModule1: TDataModule1
   OldCreateOrder = False
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 397
+  Height = 478
   Width = 607
   object ADOConnection1: TADOConnection
     ConnectionString = 
@@ -20,8 +20,8 @@ object DataModule1: TDataModule1
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 40
-    Top = 32
+    Left = 528
+    Top = 400
   end
   object atProduct: TADOTable
     Connection = ADOConnection1
@@ -29,59 +29,113 @@ object DataModule1: TDataModule1
     TableDirect = True
     TableName = 'Product'
     Left = 40
-    Top = 96
+    Top = 24
   end
   object dsProduct: TDataSource
     DataSet = atProduct
     Left = 120
-    Top = 96
+    Top = 24
   end
   object atProvider: TADOTable
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'Provider'
     Left = 40
-    Top = 152
+    Top = 80
   end
   object dsProvider: TDataSource
     DataSet = atProvider
     Left = 120
-    Top = 160
+    Top = 80
   end
   object atCompanyDetails: TADOTable
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'Company details'
     Left = 40
-    Top = 216
+    Top = 144
   end
   object dsCompanyDetails: TDataSource
     DataSet = atCompanyDetails
     Left = 120
-    Top = 216
+    Top = 144
   end
   object atClients: TADOTable
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'Clients'
     Left = 40
-    Top = 272
+    Top = 200
   end
   object dsClients: TDataSource
     DataSet = atClients
     Left = 120
-    Top = 272
+    Top = 200
   end
   object atWorkers: TADOTable
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'Workers'
-    Left = 248
-    Top = 96
+    Left = 48
+    Top = 256
   end
   object dsWorkers: TDataSource
     DataSet = atWorkers
-    Left = 312
-    Top = 96
+    Left = 112
+    Top = 256
+  end
+  object atCheck: TADOTable
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'OrderCheck'
+    Left = 40
+    Top = 320
+  end
+  object atOrderProduct: TADOTable
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    IndexFieldNames = 'codeorder'
+    MasterFields = 'codeorder'
+    MasterSource = dsCheck
+    TableName = 'Order_product'
+    Left = 40
+    Top = 384
+  end
+  object dsCheck: TDataSource
+    DataSet = atCheck
+    Left = 128
+    Top = 320
+  end
+  object dsOrderProduct: TDataSource
+    DataSet = atOrderProduct
+    Left = 128
+    Top = 384
+  end
+  object aspOrderByDate: TADOStoredProc
+    Connection = ADOConnection1
+    ProcedureName = 'Order_on_a_specific_day'
+    Parameters = <>
+    Left = 456
+    Top = 40
+  end
+  object DataSource1: TDataSource
+    DataSet = aspOrderByDate
+    Left = 544
+    Top = 40
+  end
+  object dsPayment: TDataSource
+    DataSet = atPayment
+    Left = 320
+    Top = 40
+  end
+  object atPayment: TADOTable
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    IndexFieldNames = 'codeclient'
+    MasterFields = 'codeclient'
+    MasterSource = dsClients
+    TableName = 'Payment1'
+    Left = 224
+    Top = 40
   end
 end

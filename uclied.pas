@@ -3,7 +3,8 @@ unit uclied;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
   Vcl.Mask;
 
@@ -26,10 +27,11 @@ type
     { Private declarations }
   public
     { Public declarations }
-    property NewRecord : Boolean read fNewRecord write fNewRecord; //ознака додавання нового клієнта
-    procedure Clear; //очистити поля форми для вводу нового клієнта
-    procedure LoadData; //завантажити поточний запис для редагування
-    procedure SaveData; //зберегти новий або відредагований запис
+    property NewRecord: Boolean read fNewRecord write fNewRecord;
+    // ознака додавання нового клієнта
+    procedure Clear; // очистити поля форми для вводу нового клієнта
+    procedure LoadData; // завантажити поточний запис для редагування
+    procedure SaveData; // зберегти новий або відредагований запис
   end;
 
 var
@@ -45,7 +47,7 @@ uses udata;
 
 procedure TfrmClientEdit.bbOkClick(Sender: TObject);
 begin
- SaveData;
+  SaveData;
 end;
 
 procedure TfrmClientEdit.Clear;
@@ -58,29 +60,32 @@ end;
 
 procedure TfrmClientEdit.LoadData;
 begin
- with DataModule1 do begin
-   edCode.Text:=atClients.FieldByName('code client').AsString;
-   edName.Text:=atClients.FieldByName('name').AsString;
-   edAddress.Text:=atClients.FieldByName('address').AsString;
-   mePhone.Text:=atClients.FieldByName('phone number').AsString;
- end;
+  with DataModule1 do
+  begin
+    edCode.Text := atClients.FieldByName('codeclient').AsString;
+    edName.Text := atClients.FieldByName('nameclient').AsString;
+    edAddress.Text := atClients.FieldByName('address').AsString;
+    mePhone.Text := atClients.FieldByName('phonenumber').AsString;
+  end;
 end;
-
-
 
 procedure TfrmClientEdit.SaveData;
 begin
-with DataModule1 do begin
-   if NewRecord then begin
+  with DataModule1 do
+  begin
+    if NewRecord then
+    begin
       atClients.Append;
-   end else begin
+    end
+    else
+    begin
       atClients.Edit;
-   end;
-   atClients.FieldByName('code client').AsString:=edCode.Text;
-   atClients.FieldByName('name').AsString:=edName.Text;
-   atClients.FieldByName('address').AsString:=edAddress.Text;
-   atClients.FieldByName('phone number').AsString:=mePhone.Text;
-   atClients.Post;
+    end;
+    atClients.FieldByName('codeclient').AsString := edCode.Text;
+    atClients.FieldByName('nameclient').AsString := edName.Text;
+    atClients.FieldByName('address').AsString := edAddress.Text;
+    atClients.FieldByName('phonenumber').AsString := mePhone.Text;
+    atClients.Post;
   end;
 end;
 

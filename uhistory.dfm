@@ -1,9 +1,9 @@
-object frmProvider: TfrmProvider
+object frmHistory: TfrmHistory
   Left = 0
   Top = 0
-  Caption = #1055#1086#1089#1090#1072#1095#1072#1083#1100#1085#1080#1082#1080
-  ClientHeight = 305
-  ClientWidth = 728
+  Caption = 'frmHistory'
+  ClientHeight = 457
+  ClientWidth = 746
   Color = 14003189
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,18 +16,22 @@ object frmProvider: TfrmProvider
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = 256
-    Width = 728
-    Height = 49
+    Top = 416
+    Width = 746
+    Height = 41
     Align = alBottom
+    Color = 14003189
+    ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 391
+    ExplicitWidth = 540
     object bbAdd: TBitBtn
       Left = 1
       Top = 1
       Width = 96
-      Height = 47
+      Height = 39
       Align = alLeft
-      Caption = #1044#1086#1076#1072#1090#1080
+      Caption = #1053#1086#1074#1077
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100
         180000000000C006000074120000741200000000000000000000FFFFFFFFFFFF
@@ -86,13 +90,12 @@ object frmProvider: TfrmProvider
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 0
-      OnClick = bbAddClick
     end
     object bbEdit: TBitBtn
       Left = 97
       Top = 1
       Width = 104
-      Height = 47
+      Height = 39
       Align = alLeft
       Caption = #1056#1077#1076#1072#1075#1091#1074#1072#1090#1080
       Glyph.Data = {
@@ -153,13 +156,12 @@ object frmProvider: TfrmProvider
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0C0C0E0E0E0FFFFFF}
       TabOrder = 1
-      OnClick = bbEditClick
     end
     object bbDelete: TBitBtn
       Left = 201
       Top = 1
       Width = 96
-      Height = 47
+      Height = 39
       Align = alLeft
       Caption = #1042#1080#1076#1072#1083#1080#1090#1080
       Glyph.Data = {
@@ -220,13 +222,12 @@ object frmProvider: TfrmProvider
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 2
-      OnClick = bbDeleteClick
     end
     object bbClose: TBitBtn
-      Left = 504
+      Left = 513
       Top = 1
-      Width = 223
-      Height = 47
+      Width = 232
+      Height = 39
       Align = alRight
       Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1100' '#1076#1086' '#1075#1086#1083#1086#1074#1085#1086#1075#1086' '#1084#1077#1085#1102
       Glyph.Data = {
@@ -330,63 +331,129 @@ object frmProvider: TfrmProvider
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 3
       OnClick = bbCloseClick
+      ExplicitLeft = 307
     end
   end
-  object dgClients: TDBGrid
+  object gbCheck: TGroupBox
     Left = 0
     Top = 0
-    Width = 728
-    Height = 256
-    Align = alClient
-    Color = 14003189
-    DataSource = DataModule1.dsProvider
-    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    Width = 746
+    Height = 193
+    Align = alTop
+    Caption = #1030#1089#1090#1086#1088#1110#1103' '#1079#1072#1084#1086#1074#1083#1077#1085#1100
     TabOrder = 1
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-    OnDblClick = bbEditClick
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'code'
-        Title.Alignment = taCenter
-        Title.Caption = #1050#1086#1076
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'producingcountry'
-        Title.Alignment = taCenter
-        Title.Caption = #1050#1088#1072#1111#1085#1072'-'#1074#1080#1088#1086#1073#1085#1080#1082
-        Width = 115
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'address'
-        Title.Alignment = taCenter
-        Title.Caption = #1040#1076#1088#1077#1089#1072
-        Width = 194
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'nameprovider'
-        Title.Alignment = taCenter
-        Title.Caption = #1030#1084#39#1103' '#1087#1086#1089#1090#1072#1095#1072#1083#1100#1085#1080#1082#1072
-        Width = 200
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'contacts'
-        Title.Alignment = taCenter
-        Title.Caption = #1050#1086#1085#1090#1072#1082#1090#1080
-        Width = 119
-        Visible = True
-      end>
+    ExplicitWidth = 540
+    object dgHistory: TDBGrid
+      Left = 2
+      Top = 15
+      Width = 742
+      Height = 176
+      Align = alClient
+      DataSource = DataModule1.dsCheck
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'codeorder'
+          Title.Caption = #1050#1086#1076' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+          Width = 93
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'codeworker'
+          Title.Caption = #1050#1086#1076' '#1087#1088#1072#1094#1110#1074#1085#1080#1082#1072
+          Width = 98
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'client'
+          Title.Caption = #1050#1083#1110#1108#1085#1090
+          Width = 84
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'dateorder'
+          Title.Caption = #1044#1072#1090#1072' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+          Width = 96
+          Visible = True
+        end>
+    end
+  end
+  object gbOrderProducts: TGroupBox
+    Left = 0
+    Top = 193
+    Width = 746
+    Height = 223
+    Align = alClient
+    Caption = #1044#1077#1090#1072#1083#1110#1079#1072#1094#1110#1103' '#1086#1073#1088#1072#1085#1086#1075#1086' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+    TabOrder = 2
+    ExplicitWidth = 540
+    ExplicitHeight = 198
+    object dgDetails: TDBGrid
+      Left = 2
+      Top = 15
+      Width = 351
+      Height = 206
+      Align = alLeft
+      DataSource = DataModule1.dsOrderProduct
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'codeorder'
+          Title.Caption = #8470' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'product'
+          Title.Caption = #1050#1086#1076' '#1090#1086#1074#1072#1088#1091
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'numberoforderedgoods'
+          Title.Caption = #1050#1110#1083#1100#1082#1110#1089#1090#1100
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'color'
+          Title.Caption = #1050#1086#1083#1110#1088
+          Width = -1
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'payment'
+          PickList.Strings = (
+            #1085#1110
+            #1090#1072#1082)
+          Title.Caption = #1054#1087#1083#1072#1090#1072
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'delivery'
+          PickList.Strings = (
+            #1085#1110
+            #1090#1072#1082)
+          Title.Caption = #1044#1086#1089#1090#1072#1074#1082#1072
+          Visible = True
+        end>
+    end
   end
 end

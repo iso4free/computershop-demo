@@ -40,7 +40,7 @@ object frmTovar: TfrmTovar
       end
       item
         Expanded = False
-        FieldName = 'product name'
+        FieldName = 'productname'
         Title.Caption = #1053#1072#1079#1074#1072' '#1090#1086#1074#1072#1088#1091
         Width = 218
         Visible = True
@@ -61,18 +61,20 @@ object frmTovar: TfrmTovar
       end
       item
         Expanded = False
-        FieldName = 'producing country'
+        FieldName = 'producingcountry'
         Title.Caption = #1050#1088#1072#1111#1085#1072' '#1074#1080#1088#1086#1073#1085#1080#1082
         Width = 92
         Visible = True
       end>
   end
-  object Panel1: TPanel
+  object pnlButtons: TPanel
     Left = 0
     Top = 406
     Width = 831
     Height = 41
     Align = alBottom
+    Color = 14003189
+    ParentBackground = False
     TabOrder = 1
     object bbAdd: TBitBtn
       Left = 1
@@ -274,8 +276,6 @@ object frmTovar: TfrmTovar
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       TabOrder = 2
       OnClick = bbDeleteClick
-      ExplicitLeft = 207
-      ExplicitTop = 6
     end
     object bbSearch: TBitBtn
       Left = 296
@@ -497,7 +497,7 @@ object frmTovar: TfrmTovar
     end
     object edSearch: TEdit
       Left = 479
-      Top = 14
+      Top = 10
       Width = 113
       Height = 21
       TabOrder = 5

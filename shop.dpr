@@ -6,14 +6,16 @@ uses
   udata in 'udata.pas' {DataModule1: TDataModule},
   utovar in 'utovar.pas' {frmTovar},
   utovedit in 'utovedit.pas' {frmEditTovar},
-  uklient in 'uklient.pas' {frmKlient},
+  uclient in 'uclient.pas' {frmKlient},
   uclied in 'uclied.pas' {frmClientEdit},
   ucountries in 'ucountries.pas' {frmCountries},
   ucoed in 'ucoed.pas' {frmCountryEdit},
   uprovider in 'uprovider.pas' {frmProvider},
   uproved in 'uproved.pas' {frmProviderEdit},
-  upersonal in 'upersonal.pas' {frmWorkers},
-  uworker in 'uworker.pas' {frmWorker};
+  uworkers in 'uworkers.pas' {frmWorkers},
+  uworker in 'uworker.pas' {frmWorker},
+  uhistory in 'uhistory.pas' {frmHistory},
+  uorder in 'uorder.pas' {frmOrder};
 
 {$R *.res}
 
@@ -32,5 +34,8 @@ begin
   Application.CreateForm(TfrmProviderEdit, frmProviderEdit);
   Application.CreateForm(TfrmWorkers, frmWorkers);
   Application.CreateForm(TfrmWorker, frmWorker);
+  Application.CreateForm(TfrmHistory, frmHistory);
+  Application.CreateForm(TfrmOrder, frmOrder);
   Application.Run;
+
 end.

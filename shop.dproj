@@ -144,7 +144,7 @@
             <Form>frmEditTovar</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="uklient.pas">
+        <DCCReference Include="uclient.pas">
             <Form>frmKlient</Form>
             <FormType>dfm</FormType>
         </DCCReference>
@@ -168,12 +168,20 @@
             <Form>frmProviderEdit</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="upersonal.pas">
+        <DCCReference Include="uworkers.pas">
             <Form>frmWorkers</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uworker.pas">
             <Form>frmWorker</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="uhistory.pas">
+            <Form>frmHistory</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="uorder.pas">
+            <Form>frmOrder</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

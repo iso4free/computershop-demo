@@ -1067,6 +1067,7 @@ object frmMain: TfrmMain
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     ParentFont = False
     TabOrder = 2
+    OnClick = bbHistoryClick
   end
   object bbProviders: TBitBtn
     Left = 75
