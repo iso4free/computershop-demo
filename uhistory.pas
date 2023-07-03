@@ -19,9 +19,12 @@ type
     gbOrderProducts: TGroupBox;
     dgHistory: TDBGrid;
     dgDetails: TDBGrid;
+    bbOrderByDay: TBitBtn;
     procedure bbCloseClick(Sender: TObject);
     procedure bbAddClick(Sender: TObject);
     procedure bbEditClick(Sender: TObject);
+    procedure bbDeleteClick(Sender: TObject);
+    procedure bbOrderByDayClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,7 +38,7 @@ implementation
 
 {$R *.dfm}
 
-uses udata, uorder;
+uses udata, uorder, udayorder;
 
 procedure TfrmHistory.bbAddClick(Sender: TObject);
 begin
@@ -49,11 +52,28 @@ begin
  Close;
 end;
 
+procedure TfrmHistory.bbDeleteClick(Sender: TObject);
+begin
+     if MessageDlg('Дійсно видалити це замовлення?', TMsgDlgType.mtConfirmation,
+      mbYesNo, 0) = mrYes then with DataModule1 do begin
+        atOrderProduct.First;
+        while not atOrderProduct.Eof do begin
+          atOrderProduct.Delete;
+        end;
+        atCheck.Delete;
+      end;
+end;
+
 procedure TfrmHistory.bbEditClick(Sender: TObject);
 begin
  frmOrder.NewRecord:=False;
  frmOrder.LoadData;
  frmOrder.ShowModal;
+end;
+
+procedure TfrmHistory.bbOrderByDayClick(Sender: TObject);
+begin
+  frmDayOrder.ShowModal;
 end;
 
 end.

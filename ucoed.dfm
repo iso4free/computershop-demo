@@ -77,6 +77,7 @@ object frmCountryEdit: TfrmCountryEdit
     Top = 13
     Width = 213
     Height = 21
+    Color = 9984967
     TabOrder = 1
     Text = 'edCountry'
   end
@@ -85,6 +86,7 @@ object frmCountryEdit: TfrmCountryEdit
     Top = 40
     Width = 213
     Height = 21
+    Color = 9984967
     TabOrder = 2
     Text = 'edAddress'
   end
@@ -93,6 +95,7 @@ object frmCountryEdit: TfrmCountryEdit
     Top = 94
     Width = 184
     Height = 21
+    Color = 9984967
     EditMask = '00000;1;_'
     MaxLength = 5
     TabOrder = 3
@@ -103,6 +106,7 @@ object frmCountryEdit: TfrmCountryEdit
     Top = 67
     Width = 208
     Height = 21
+    Color = 9984967
     EditMask = '000000000;1;_'
     MaxLength = 9
     TabOrder = 4

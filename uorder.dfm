@@ -3,7 +3,7 @@ object frmOrder: TfrmOrder
   Top = 0
   Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103
   ClientHeight = 365
-  ClientWidth = 407
+  ClientWidth = 449
   Color = 14003189
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,15 +18,15 @@ object frmOrder: TfrmOrder
   object Panel1: TPanel
     Left = 0
     Top = 331
-    Width = 407
+    Width = 449
     Height = 34
     Align = alBottom
     AutoSize = True
     Color = 14003189
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 267
-    ExplicitWidth = 313
+    ExplicitTop = 335
+    ExplicitWidth = 407
     object bbOk: TBitBtn
       Left = 1
       Top = 1
@@ -39,7 +39,7 @@ object frmOrder: TfrmOrder
       OnClick = bbOkClick
     end
     object bbCancel: TBitBtn
-      Left = 324
+      Left = 366
       Top = 1
       Width = 82
       Height = 32
@@ -48,18 +48,18 @@ object frmOrder: TfrmOrder
       Kind = bkCancel
       NumGlyphs = 2
       TabOrder = 1
-      ExplicitLeft = 230
+      ExplicitLeft = 324
     end
   end
   object gbOrderCheck: TGroupBox
     Left = 0
     Top = 0
-    Width = 407
+    Width = 449
     Height = 113
     Align = alTop
     Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103
     TabOrder = 1
-    ExplicitWidth = 307
+    ExplicitWidth = 401
     object lbCodeOrder: TLabel
       Left = 24
       Top = 24
@@ -143,41 +143,44 @@ object frmOrder: TfrmOrder
   object gbOrderProducts: TGroupBox
     Left = 0
     Top = 113
-    Width = 407
+    Width = 449
     Height = 218
     Align = alClient
     Caption = #1057#1082#1083#1072#1076' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
     TabOrder = 2
-    ExplicitLeft = 48
-    ExplicitTop = 168
-    ExplicitWidth = 185
-    ExplicitHeight = 105
+    ExplicitWidth = 407
     object sgOrderProduct: TStringGrid
       Left = 2
       Top = 49
-      Width = 403
+      Width = 445
       Height = 167
       Align = alClient
       ColCount = 6
       FixedCols = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect, goFixedRowDefAlign]
       TabOrder = 0
-      ExplicitLeft = 186
-      ExplicitTop = 12
-      ExplicitWidth = 120
-      ExplicitHeight = 291
+      ExplicitTop = 46
+      ExplicitWidth = 403
+      ColWidths = (
+        32
+        105
+        90
+        79
+        58
+        64)
     end
     object pnlOrderButtons: TPanel
       Left = 2
       Top = 15
-      Width = 403
+      Width = 445
       Height = 34
       Align = alTop
       Color = 14003189
       ParentBackground = False
       TabOrder = 1
-      ExplicitWidth = 303
+      ExplicitWidth = 403
       object bbDeleteTovar: TBitBtn
-        Left = 266
+        Left = 308
         Top = 1
         Width = 136
         Height = 32
@@ -241,7 +244,8 @@ object frmOrder: TfrmOrder
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
         TabOrder = 0
-        ExplicitLeft = 129
+        OnClick = bbDeleteTovarClick
+        ExplicitTop = -4
       end
       object bbAddTovar: TBitBtn
         Left = 1
@@ -308,6 +312,9 @@ object frmOrder: TfrmOrder
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
         TabOrder = 1
+        OnClick = bbAddTovarClick
+        ExplicitLeft = 0
+        ExplicitTop = -4
       end
     end
   end

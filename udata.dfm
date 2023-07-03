@@ -20,8 +20,8 @@ object DataModule1: TDataModule1
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 528
-    Top = 400
+    Left = 536
+    Top = 24
   end
   object atProduct: TADOTable
     Connection = ADOConnection1
@@ -113,20 +113,26 @@ object DataModule1: TDataModule1
   end
   object aspOrderByDate: TADOStoredProc
     Connection = ADOConnection1
+    CursorType = ctStatic
     ProcedureName = 'Order_on_a_specific_day'
-    Parameters = <>
-    Left = 456
-    Top = 40
+    Parameters = <
+      item
+        Name = '['#1042#1074#1077#1076#1110#1090#1100' '#1076#1072#1090#1091' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#1090#1086#1074#1072#1088#1091']'
+        DataType = ftDateTime
+        Value = 44845d
+      end>
+    Left = 224
+    Top = 104
   end
-  object DataSource1: TDataSource
+  object dsOrderByDate: TDataSource
     DataSet = aspOrderByDate
-    Left = 544
-    Top = 40
+    Left = 312
+    Top = 104
   end
   object dsPayment: TDataSource
     DataSet = atPayment
-    Left = 320
-    Top = 40
+    Left = 280
+    Top = 24
   end
   object atPayment: TADOTable
     Connection = ADOConnection1
@@ -135,7 +141,7 @@ object DataModule1: TDataModule1
     MasterFields = 'codeclient'
     MasterSource = dsClients
     TableName = 'Payment1'
-    Left = 224
-    Top = 40
+    Left = 208
+    Top = 24
   end
 end

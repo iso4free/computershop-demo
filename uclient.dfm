@@ -2,7 +2,7 @@ object frmKlient: TfrmKlient
   Left = 0
   Top = 0
   Caption = #1050#1083#1110#1108#1085#1090#1080
-  ClientHeight = 312
+  ClientHeight = 393
   ClientWidth = 600
   Color = 14003189
   Font.Charset = DEFAULT_CHARSET
@@ -16,14 +16,14 @@ object frmKlient: TfrmKlient
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = 271
+    Top = 352
     Width = 600
     Height = 41
     Align = alBottom
     Color = 14003189
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 690
+    ExplicitTop = 271
     object bbAdd: TBitBtn
       Left = 1
       Top = 1
@@ -333,14 +333,13 @@ object frmKlient: TfrmKlient
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 3
       OnClick = bbCloseClick
-      ExplicitLeft = 528
     end
   end
   object dgClients: TDBGrid
     Left = 0
     Top = 0
     Width = 600
-    Height = 137
+    Height = 161
     Align = alTop
     Color = 14003189
     DataSource = DataModule1.dsClients
@@ -387,20 +386,22 @@ object frmKlient: TfrmKlient
   end
   object gbHistory: TGroupBox
     Left = 0
-    Top = 137
+    Top = 161
     Width = 600
-    Height = 134
+    Height = 191
     Align = alClient
     Caption = #1030#1089#1090#1086#1088#1110#1103' '#1079#1072#1084#1086#1074#1083#1077#1085#1100' '#1082#1083#1110#1108#1085#1090#1072
     TabOrder = 2
-    ExplicitWidth = 690
+    ExplicitTop = 137
+    ExplicitHeight = 215
     object dgHistory: TDBGrid
       Left = 2
       Top = 15
       Width = 596
-      Height = 117
+      Height = 174
       Align = alClient
       DataSource = DataModule1.dsPayment
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

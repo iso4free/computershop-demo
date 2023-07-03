@@ -15,7 +15,9 @@ uses
   uworkers in 'uworkers.pas' {frmWorkers},
   uworker in 'uworker.pas' {frmWorker},
   uhistory in 'uhistory.pas' {frmHistory},
-  uorder in 'uorder.pas' {frmOrder};
+  uorder in 'uorder.pas' {frmOrder},
+  uaddtov in 'uaddtov.pas' {frmAddPosition},
+  udayorder in 'udayorder.pas' {frmDayOrder};
 
 {$R *.res}
 
@@ -36,6 +38,8 @@ begin
   Application.CreateForm(TfrmWorker, frmWorker);
   Application.CreateForm(TfrmHistory, frmHistory);
   Application.CreateForm(TfrmOrder, frmOrder);
+  Application.CreateForm(TfrmAddPosition, frmAddPosition);
+  Application.CreateForm(TfrmDayOrder, frmDayOrder);
   Application.Run;
 
 end.

@@ -23,7 +23,7 @@ type
         dsCheck: TDataSource;
         dsOrderProduct: TDataSource;
     aspOrderByDate: TADOStoredProc;
-    DataSource1: TDataSource;
+    dsOrderByDate: TDataSource;
     dsPayment: TDataSource;
     atPayment: TADOTable;
         procedure DataModuleCreate(Sender: TObject);

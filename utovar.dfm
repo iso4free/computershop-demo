@@ -33,7 +33,7 @@ object frmTovar: TfrmTovar
     Columns = <
       item
         Expanded = False
-        FieldName = 'product code'
+        FieldName = 'productcode'
         Title.Caption = #1050#1086#1076' '#1090#1086#1074#1072#1088#1091
         Width = 86
         Visible = True
@@ -500,6 +500,7 @@ object frmTovar: TfrmTovar
       Top = 10
       Width = 113
       Height = 21
+      Color = 9984967
       TabOrder = 5
       Text = 'edSearch'
       Visible = False
