@@ -74,7 +74,7 @@ begin
     atCompanyDetails.First;
     while not atCompanyDetails.EOF do
     begin
-      cbCountry.Items.Add(atCompanyDetails.FieldByName('producing country')
+      cbCountry.Items.Add(atCompanyDetails.FieldByName('producingcountry')
         .AsString);
       atCompanyDetails.Next;
     end;
@@ -107,9 +107,9 @@ begin
       atProvider.Edit;
     end;
 
-    atProvider.FieldByName('producing country').AsString := cbCountry.Text;
+    atProvider.FieldByName('producingcountry').AsString := cbCountry.Text;
     atProvider.FieldByName('address').AsString := edAddress.Text;
-    atProvider.FieldByName('name provider').AsString := edName.Text;
+    atProvider.FieldByName('nameprovider').AsString := edName.Text;
     atProvider.FieldByName('contacts').AsString := mePhone.Text;
 
     atProvider.Post;

@@ -50,8 +50,6 @@ object frmProviderEdit: TfrmProviderEdit
     Align = alBottom
     AutoSize = True
     TabOrder = 0
-    ExplicitTop = 137
-    ExplicitWidth = 319
     object bbOk: TBitBtn
       Left = 1
       Top = 1
@@ -62,7 +60,6 @@ object frmProviderEdit: TfrmProviderEdit
       NumGlyphs = 2
       TabOrder = 0
       OnClick = bbOkClick
-      ExplicitLeft = 0
     end
     object bbCancel: TBitBtn
       Left = 243
@@ -74,7 +71,6 @@ object frmProviderEdit: TfrmProviderEdit
       Kind = bkCancel
       NumGlyphs = 2
       TabOrder = 1
-      ExplicitLeft = 236
     end
   end
   object cbCountry: TComboBox
