@@ -335,9 +335,9 @@ object frmHistory: TfrmHistory
     end
     object bbOrderByDay: TBitBtn
       Left = 303
-      Top = 4
+      Top = 1
       Width = 204
-      Height = 41
+      Height = 39
       Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#1087#1086' '#1076#1072#1090#1072#1093
       Glyph.Data = {
         360C0000424D360C000000000000360000002800000020000000200000000100

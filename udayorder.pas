@@ -36,6 +36,7 @@ begin
  with DataModule1 do begin
    aspOrderByDate.Close;
    aspOrderByDate.Parameters.ParamByName('[¬вед≥ть дату замовленн€ товару]').Value:=DateTimePicker1.Date;
+   aspOrderByDate.Prepared:=True;
    aspOrderByDate.Open;
  end;
 end;

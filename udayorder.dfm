@@ -24,8 +24,6 @@ object frmDayOrder: TfrmDayOrder
     Color = 14003189
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 265
-    ExplicitWidth = 313
     object lbDate: TLabel
       Left = 16
       Top = 10
@@ -43,7 +41,6 @@ object frmDayOrder: TfrmDayOrder
       Kind = bkCancel
       NumGlyphs = 2
       TabOrder = 0
-      ExplicitLeft = 230
     end
     object DateTimePicker1: TDateTimePicker
       Left = 184
