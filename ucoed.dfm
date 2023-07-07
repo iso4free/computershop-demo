@@ -9,9 +9,7 @@ object frmCountryEdit: TfrmCountryEdit
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object lbContact: TLabel
     Left = 24
@@ -49,6 +47,8 @@ object frmCountryEdit: TfrmCountryEdit
     Align = alBottom
     AutoSize = True
     TabOrder = 0
+    ExplicitTop = 128
+    ExplicitWidth = 313
     object bbOk: TBitBtn
       Left = 1
       Top = 1
@@ -70,6 +70,7 @@ object frmCountryEdit: TfrmCountryEdit
       Kind = bkCancel
       NumGlyphs = 2
       TabOrder = 1
+      ExplicitLeft = 230
     end
   end
   object edCountry: TEdit

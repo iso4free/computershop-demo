@@ -48,7 +48,7 @@ begin
     // файл БД рохзміщується рразом з виконуваним файлоом програми,
     // це враховуємо при формуванні рядку підключення
     DatabaseFile := ExtractFileDir(ParamStr(0)) +
-      '\Бірюкова_Магазин_комп’ютерної_техніки.MDB';
+      '\Магазин_комп’ютерної_техніки.MDB';
     ADOConnection1.ConnectionString := 'Provider=Microsoft.Jet.OLEDB.4.0;' +
       'Data Source=' + DatabaseFile;
     // відкриваємо таблиці БД

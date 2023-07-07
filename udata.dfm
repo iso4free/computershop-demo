@@ -1,9 +1,9 @@
 object DataModule1: TDataModule1
-  OldCreateOrder = False
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 478
-  Width = 607
+  Height = 598
+  Width = 759
+  PixelsPerInch = 120
   object ADOConnection1: TADOConnection
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Us' +
@@ -20,76 +20,76 @@ object DataModule1: TDataModule1
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 536
-    Top = 24
+    Left = 670
+    Top = 30
   end
   object atProduct: TADOTable
     Connection = ADOConnection1
     CursorType = ctStatic
     TableDirect = True
     TableName = 'Product'
-    Left = 40
-    Top = 24
+    Left = 50
+    Top = 30
   end
   object dsProduct: TDataSource
     DataSet = atProduct
-    Left = 120
-    Top = 24
+    Left = 150
+    Top = 30
   end
   object atProvider: TADOTable
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'Provider'
-    Left = 40
-    Top = 80
+    Left = 50
+    Top = 100
   end
   object dsProvider: TDataSource
     DataSet = atProvider
-    Left = 120
-    Top = 80
+    Left = 150
+    Top = 100
   end
   object atCompanyDetails: TADOTable
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'Company details'
-    Left = 40
-    Top = 144
+    Left = 50
+    Top = 180
   end
   object dsCompanyDetails: TDataSource
     DataSet = atCompanyDetails
-    Left = 120
-    Top = 144
+    Left = 150
+    Top = 180
   end
   object atClients: TADOTable
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'Clients'
-    Left = 40
-    Top = 200
+    Left = 50
+    Top = 250
   end
   object dsClients: TDataSource
     DataSet = atClients
-    Left = 120
-    Top = 200
+    Left = 150
+    Top = 250
   end
   object atWorkers: TADOTable
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'Workers'
-    Left = 48
-    Top = 256
+    Left = 60
+    Top = 320
   end
   object dsWorkers: TDataSource
     DataSet = atWorkers
-    Left = 112
-    Top = 256
+    Left = 140
+    Top = 320
   end
   object atCheck: TADOTable
     Connection = ADOConnection1
     CursorType = ctStatic
     TableName = 'OrderCheck'
-    Left = 40
-    Top = 320
+    Left = 50
+    Top = 400
   end
   object atOrderProduct: TADOTable
     Connection = ADOConnection1
@@ -98,18 +98,18 @@ object DataModule1: TDataModule1
     MasterFields = 'codeorder'
     MasterSource = dsCheck
     TableName = 'Order_product'
-    Left = 40
-    Top = 384
+    Left = 50
+    Top = 480
   end
   object dsCheck: TDataSource
     DataSet = atCheck
-    Left = 128
-    Top = 320
+    Left = 160
+    Top = 400
   end
   object dsOrderProduct: TDataSource
     DataSet = atOrderProduct
-    Left = 128
-    Top = 384
+    Left = 160
+    Top = 480
   end
   object aspOrderByDate: TADOStoredProc
     Connection = ADOConnection1
@@ -121,18 +121,18 @@ object DataModule1: TDataModule1
         DataType = ftDateTime
         Value = 44845d
       end>
-    Left = 224
-    Top = 104
+    Left = 280
+    Top = 130
   end
   object dsOrderByDate: TDataSource
     DataSet = aspOrderByDate
-    Left = 312
-    Top = 104
+    Left = 390
+    Top = 130
   end
   object dsPayment: TDataSource
     DataSet = atPayment
-    Left = 280
-    Top = 24
+    Left = 350
+    Top = 30
   end
   object atPayment: TADOTable
     Connection = ADOConnection1
@@ -141,7 +141,7 @@ object DataModule1: TDataModule1
     MasterFields = 'codeclient'
     MasterSource = dsClients
     TableName = 'Payment1'
-    Left = 208
-    Top = 24
+    Left = 260
+    Top = 30
   end
 end

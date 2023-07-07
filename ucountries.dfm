@@ -10,9 +10,7 @@ object frmCountries: TfrmCountries
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -21,6 +19,8 @@ object frmCountries: TfrmCountries
     Height = 50
     Align = alBottom
     TabOrder = 0
+    ExplicitTop = 247
+    ExplicitWidth = 533
     object bbAdd: TBitBtn
       Left = 1
       Top = 1
@@ -330,6 +330,7 @@ object frmCountries: TfrmCountries
         0000000000000000000000000000000000000000000000000000}
       TabOrder = 3
       OnClick = bbCloseClick
+      ExplicitLeft = 394
     end
   end
   object dgClients: TDBGrid
@@ -375,7 +376,7 @@ object frmCountries: TfrmCountries
       end
       item
         Expanded = False
-        FieldName = 'postalindex'
+        FieldName = 'postal index'
         Title.Alignment = taCenter
         Title.Caption = #1055#1086#1096#1090#1086#1074#1080#1081' '#1110#1085#1076#1077#1082#1089
         Width = 100

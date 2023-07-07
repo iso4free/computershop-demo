@@ -66,7 +66,7 @@ begin
       .AsString;
     edAddress.Text := atCompanyDetails.FieldByName('address').AsString;
     meContacts.Text := atCompanyDetails.FieldByName('contacts').AsString;
-    meIndex.Text := atCompanyDetails.FieldByName('postalindex').AsString;
+    meIndex.Text := atCompanyDetails.FieldByName('postal index').AsString;
   end;
 end;
 
@@ -86,7 +86,7 @@ begin
       edCountry.Text;
     atCompanyDetails.FieldByName('address').AsString := edAddress.Text;
     atCompanyDetails.FieldByName('contacts').AsString := meContacts.Text;
-    atCompanyDetails.FieldByName('postalindex').AsString := meIndex.Text;
+    atCompanyDetails.FieldByName('postal index').AsString := meIndex.Text;
     atCompanyDetails.Post;
   end;
 end;
